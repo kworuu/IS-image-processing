@@ -27,14 +27,14 @@ namespace ImageProcessingPrac
                     a.SetPixel(x, y, gray);
                 }
             }
-            
-            int[] histodata = new int[256];
+
+            int[] histdata = new int[256];
             for (int x = 0; x < a.Width; x++)
             {
                 for (int y = 0; y < a.Height; y++)
                 {
                     sample = a.GetPixel(x, y);
-                    histodata[sample.R]++;
+                    histdata[sample.R]++;
                 }
             }
 
@@ -49,9 +49,9 @@ namespace ImageProcessingPrac
 
             for (int x = 0; x < 256; x++)
             {
-                for (int y = 0; y < Math.Min(histodata[x] / 5, b.Height - 1); y++)
+                for (int y = 0; y < Math.Min(histdata[x] / 5, b.Height - 1); y++)
                 {
-                    b.SetPixel(x, y, Color.Black);
+                    b.SetPixel(x, (b.Height - 1), Color.Black);
                 }
             }
         }
