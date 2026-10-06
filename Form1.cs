@@ -34,9 +34,9 @@ namespace ImageProcessingPrac
             processed = new Bitmap(loaded.Width, loaded.Height);
             
             Color pixel;
-            for(int x = 0; x < loaded.Width; x++)
+            for (int x = 0; x < loaded.Width; x++)
             {
-                for(int y = 0; y < loaded.Height; y++)
+                for (int y = 0; y < loaded.Height; y++)
                 {
                     pixel = loaded.GetPixel(x, y);
                     processed.SetPixel(x, y, pixel);
@@ -52,9 +52,9 @@ namespace ImageProcessingPrac
 
             Color pixel;
             int avg;
-            for(int x = 0; x < loaded.Width; x++)
+            for (int x = 0; x < loaded.Width; x++)
             {
-                for(int y = 0; y < loaded.Height; y++)
+                for (int y = 0; y < loaded.Height; y++)
                 {
                     pixel = loaded.GetPixel(x, y);
                     avg = (pixel.R + pixel.G + pixel.B)/3;
@@ -126,6 +126,12 @@ namespace ImageProcessingPrac
                     processed.SetPixel(hor, y, pixel);
                 }
             }
+            pictureBox2.Image = processed;
+        }
+
+        private void histogramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasicDIP.Hist(ref loaded, ref processed);
             pictureBox2.Image = processed;
         }
 
