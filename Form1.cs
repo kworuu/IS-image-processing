@@ -135,6 +135,30 @@ namespace ImageProcessingPrac
             pictureBox2.Image = processed;
         }
 
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            BasicDIP.Brightness(ref loaded, ref processed, trackBar1.Value);
+            pictureBox2.Image = processed;
+        }
+
+        private void contrastToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasicDIP.Equalisation(ref loaded, ref processed, trackBar2.Value / 100);
+            pictureBox2.Image = processed;
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            BasicDIP.Rotate(ref loaded, ref processed, trackBar3.Value);
+            pictureBox2.Image = processed;
+        }
+
+        private void scaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasicDIP.Scale(ref loaded, ref processed, 100, 100);
+            pictureBox2.Image = processed;
+        }
+
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             processed.Save(saveFileDialog1.FileName);

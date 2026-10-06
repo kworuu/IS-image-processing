@@ -38,14 +38,22 @@
             this.inversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mirrorVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mirrorHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.histogramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.histogramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.contrastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.scaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -91,7 +99,9 @@
             this.inversionToolStripMenuItem,
             this.mirrorVerticalToolStripMenuItem,
             this.mirrorHorizontalToolStripMenuItem,
-            this.histogramToolStripMenuItem});
+            this.histogramToolStripMenuItem,
+            this.contrastToolStripMenuItem,
+            this.scaleToolStripMenuItem});
             this.dIPToolStripMenuItem.Name = "dIPToolStripMenuItem";
             this.dIPToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.dIPToolStripMenuItem.Text = "DIP";
@@ -131,6 +141,13 @@
             this.mirrorHorizontalToolStripMenuItem.Text = "Mirror Horizontal";
             this.mirrorHorizontalToolStripMenuItem.Click += new System.EventHandler(this.mirrorHorizontalToolStripMenuItem_Click);
             // 
+            // histogramToolStripMenuItem
+            // 
+            this.histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
+            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.histogramToolStripMenuItem.Text = "Histogram";
+            this.histogramToolStripMenuItem.Click += new System.EventHandler(this.histogramToolStripMenuItem_Click);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -142,7 +159,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(37, 92);
+            this.pictureBox1.Location = new System.Drawing.Point(37, 156);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(398, 334);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -151,25 +168,67 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(456, 92);
+            this.pictureBox2.Location = new System.Drawing.Point(456, 156);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(398, 334);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // histogramToolStripMenuItem
+            // trackBar1
             // 
-            this.histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
-            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.histogramToolStripMenuItem.Text = "Histogram";
-            this.histogramToolStripMenuItem.Click += new System.EventHandler(this.histogramToolStripMenuItem_Click);
+            this.trackBar1.Location = new System.Drawing.Point(456, 30);
+            this.trackBar1.Maximum = 50;
+            this.trackBar1.Minimum = -50;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(398, 56);
+            this.trackBar1.TabIndex = 3;
+            this.trackBar1.Value = 14;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(37, 31);
+            this.trackBar2.Maximum = 100;
+            this.trackBar2.Minimum = 1;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(398, 56);
+            this.trackBar2.TabIndex = 4;
+            this.trackBar2.Value = 1;
+            // 
+            // contrastToolStripMenuItem
+            // 
+            this.contrastToolStripMenuItem.Name = "contrastToolStripMenuItem";
+            this.contrastToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.contrastToolStripMenuItem.Text = "Contrast";
+            this.contrastToolStripMenuItem.Click += new System.EventHandler(this.contrastToolStripMenuItem_Click);
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.Location = new System.Drawing.Point(241, 83);
+            this.trackBar3.Maximum = 360;
+            this.trackBar3.Minimum = -360;
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(398, 56);
+            this.trackBar3.TabIndex = 5;
+            this.trackBar3.Value = 1;
+            this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
+            // 
+            // scaleToolStripMenuItem
+            // 
+            this.scaleToolStripMenuItem.Name = "scaleToolStripMenuItem";
+            this.scaleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.scaleToolStripMenuItem.Text = "Scale";
+            this.scaleToolStripMenuItem.Click += new System.EventHandler(this.scaleToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 514);
+            this.Controls.Add(this.trackBar3);
+            this.Controls.Add(this.trackBar2);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -180,6 +239,9 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,6 +264,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolStripMenuItem histogramToolStripMenuItem;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.ToolStripMenuItem contrastToolStripMenuItem;
+        private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.ToolStripMenuItem scaleToolStripMenuItem;
     }
 }
 
